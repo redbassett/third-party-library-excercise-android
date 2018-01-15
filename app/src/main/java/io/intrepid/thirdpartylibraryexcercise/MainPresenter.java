@@ -1,5 +1,7 @@
 package io.intrepid.thirdpartylibraryexcercise;
 
+import com.bumptech.glide.Glide;
+
 class MainPresenter implements MainContract.Presenter, GetRandomCatUrlTask.Callback {
 
     private static final String CAT_URL = "http://www.random.cat/meow";
