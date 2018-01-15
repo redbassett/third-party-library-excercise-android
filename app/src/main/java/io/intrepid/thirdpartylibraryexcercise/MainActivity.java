@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View, DownloadCatImageTask.Callback {
     @BindView(R.id.image_view) ImageView imageView;
@@ -27,13 +28,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         presenter.bindView(this);
 
         ButterKnife.bind(this);
-
-        getNewCatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onNewCatButtonClick();
-            }
-        });
     }
 
     @Override
@@ -42,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         presenter.bindView(this);
     }
 
+    @OnClick(R.id.new_cat_button)
     public void onNewCatButtonClick() {
         presenter.onNewCatButtonClick();
     }
